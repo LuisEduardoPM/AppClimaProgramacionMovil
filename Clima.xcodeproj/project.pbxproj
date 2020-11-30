@@ -14,6 +14,8 @@
 		0B5AD67B25708E3D00BC0F71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B5AD67A25708E3D00BC0F71 /* Assets.xcassets */; };
 		0B5AD67E25708E3D00BC0F71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B5AD67C25708E3D00BC0F71 /* LaunchScreen.storyboard */; };
 		0B66140025734337001891D2 /* ClimaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6613FF25734337001891D2 /* ClimaManager.swift */; };
+		0BC704F7257491E8002A8DCC /* ClimaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC704F6257491E8002A8DCC /* ClimaData.swift */; };
+		0BC704F92574A302002A8DCC /* ClimaModelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC704F82574A302002A8DCC /* ClimaModelo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		0B5AD67D25708E3D00BC0F71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B5AD67F25708E3D00BC0F71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B6613FF25734337001891D2 /* ClimaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaManager.swift; sourceTree = "<group>"; };
+		0BC704F6257491E8002A8DCC /* ClimaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaData.swift; sourceTree = "<group>"; };
+		0BC704F82574A302002A8DCC /* ClimaModelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaModelo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				0B5AD67F25708E3D00BC0F71 /* Info.plist */,
 				0B5AD67725708E3B00BC0F71 /* Clima.xcdatamodeld */,
 				0B6613FF25734337001891D2 /* ClimaManager.swift */,
+				0BC704F6257491E8002A8DCC /* ClimaData.swift */,
+				0BC704F82574A302002A8DCC /* ClimaModelo.swift */,
 			);
 			path = Clima;
 			sourceTree = "<group>";
@@ -141,10 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BC704F92574A302002A8DCC /* ClimaModelo.swift in Sources */,
 				0B5AD67325708E3B00BC0F71 /* ViewController.swift in Sources */,
 				0B5AD67925708E3B00BC0F71 /* Clima.xcdatamodeld in Sources */,
 				0B66140025734337001891D2 /* ClimaManager.swift in Sources */,
 				0B5AD67125708E3B00BC0F71 /* AppDelegate.swift in Sources */,
+				0BC704F7257491E8002A8DCC /* ClimaData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
