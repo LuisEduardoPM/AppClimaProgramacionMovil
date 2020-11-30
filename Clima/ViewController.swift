@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         buscarTextField.delegate = self
-        // Do any additional setup after loading the view.
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -40,6 +40,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func BuscarButton(_ sender: UIButton) {
         ciudadLabel.text = buscarTextField.text
         climaMabnager.fetchClima(nombreCiudad: buscarTextField.text!)
+        // uwu
     }
 }
 
