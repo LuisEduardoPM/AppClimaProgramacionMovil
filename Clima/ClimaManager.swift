@@ -10,6 +10,7 @@ import Foundation
 
 protocol ClimaManagerDelegate {
     func actualizarClima (clima: ClimaModelo)
+    func error (error: Error, descripcion: String)
 }
 
 struct ClimaManager {
@@ -20,6 +21,12 @@ struct ClimaManager {
         
         let urlString = "\(climaURL)&q=\(nombreCiudad)"
         realizarSolicitud(urlString:urlString)
+        print("nombre")
+    }
+    func fetchClima (lat:Double , long : Double){
+        let urlString = "\(climaURL)&lat=\(lat)&lon=\(long)"
+        realizarSolicitud(urlString:urlString)
+        print("coordenadas")
     }
     func realizarSolicitud(urlString: String) {
         if let url = URL(string: urlString){
@@ -32,6 +39,7 @@ struct ClimaManager {
     
     func handle(data:Data? , respuesta : URLResponse? , error : Error?)  {
         if error != nil {
+            delegado?.error(error: error!, descripcion: "Lugar no encontado")
             return
         }
         if let datosSeguros = data {
@@ -55,6 +63,7 @@ struct ClimaManager {
             return objClima
         } catch{
             print(error)
+            delegado?.error(error: error, descripcion: "Error al decodificar datos")
             return nil
             
             
