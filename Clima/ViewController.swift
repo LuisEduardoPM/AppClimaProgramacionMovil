@@ -17,6 +17,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var climaImageView: UIImageView!
     @IBOutlet weak var descripcionClimaLabel: UILabel!
     
+    @IBOutlet weak var maxLabel: UILabel!
+    @IBOutlet weak var minLabel: UILabel!
+    @IBOutlet weak var sensacionLabel: UILabel!
+    
+    @IBOutlet weak var velcidadVientoLabel: UILabel!
+    
+    
     var climaManager = ClimaManager ()
     var locationManager = CLLocationManager()
     
@@ -55,7 +62,14 @@ extension ViewController : ClimaManagerDelegate {
     func error(error: Error, descripcion: String) {
         DispatchQueue.main.async {
             self.ciudadLabel.text = descripcion
-        }
+            self.temperaturaLabel.text = ""
+            self.descripcionClimaLabel.text = ""
+            self.climaImageView.image = UIImage(named: "sunny.png")
+            
+            self.sensacionLabel.text = ""
+            self.velcidadVientoLabel.text = ""
+            self.maxLabel.text = ""
+            self.minLabel.text = ""        }
         
     }
     
@@ -65,11 +79,17 @@ extension ViewController : ClimaManagerDelegate {
         DispatchQueue.main.async {
             self.temperaturaLabel.text = "\(clima.temperaturaCelcis) °C"
             self.descripcionClimaLabel.text = clima.descripcionClima
-            self.climaImageView.image = UIImage(named: "thunderstorm.png")
+            self.climaImageView.image = UIImage(named: clima.condicionCLima)
             self.ciudadLabel.text = clima.nombreCiudad
-            
+            self.sensacionLabel.text = "Sensación térmica: \(clima.sensacion_termica) °C"
+            self.velcidadVientoLabel.text = "Velocidad del viento: \(clima.vel_viento)"
+            self.maxLabel.text = "Max: \(clima.temp_max) °C"
+            self.minLabel.text = "Min: \(clima.temp_min) °C"
         }
         
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     

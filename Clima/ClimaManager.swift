@@ -58,12 +58,17 @@ struct ClimaManager {
             let nombre = dataDecodificada.name
             let descripcion = dataDecodificada.weather[0].description
             let temperatura = dataDecodificada.main.temp
+            let humedad = dataDecodificada.main.humidity
+            let vel_viento = dataDecodificada.wind.speed
+            let sen_term = dataDecodificada.main.feels_like
+            let tmax = dataDecodificada.main.temp_max
+            let tmin = dataDecodificada.main.temp_min
             
-            let objClima = ClimaModelo (conID: id, nombreCiudad: nombre, descripcionClima: descripcion, temperaturaCelcis: temperatura)
+            let objClima = ClimaModelo (conID: id, nombreCiudad: nombre, descripcionClima: descripcion, temperaturaCelcis: temperatura, humedad: humedad, sensacion_termica: sen_term, temp_max: tmax, temp_min: tmin, vel_viento: vel_viento)
             return objClima
         } catch{
             print(error)
-            delegado?.error(error: error, descripcion: "Error al decodificar datos")
+            delegado?.error(error: error, descripcion: "Lugar no encontrado")
             return nil
             
             
